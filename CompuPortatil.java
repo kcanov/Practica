@@ -1,3 +1,5 @@
+package practica;
+
 import java.util.Scanner;
 
 public class CompuPortatil {
@@ -104,4 +106,3 @@ public class CompuPortatil {
         }
     }
 }
-
