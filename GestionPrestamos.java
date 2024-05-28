@@ -1,3 +1,5 @@
+package practica;
+
 import java.util.HashMap;
 import java.util.Map;
 
