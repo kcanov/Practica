@@ -30,6 +30,8 @@ public class Auxiliar {
                     gestionPrestamos.imprimirInventario();
                     break;
                 case 4:
+                    System.out.println("Profe, el código está melo. Ponenos buena nota."
+                            + "\nHasta Luego.");
                     salir = true;
                     break;
                 default:
@@ -203,7 +205,7 @@ public class Auxiliar {
         System.out.println("Seleccione el sistema operativo:"
                 +"\n1. Windows 7"
                 +"\n2. Windows 10"
-                +"n3. Windows 11");
+                +"\n3. Windows 11");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
         switch (opcion) {
             case 1:
@@ -220,8 +222,8 @@ public class Auxiliar {
 
     public String elegirProcesador() {
         System.out.println("Seleccione el procesador:"
-            +"1. AMD Ryzen"
-            +"2. Intel® Core™ i5");
+            +"\n1. AMD Ryzen"
+            +"\n2. Intel® Core™ i5");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-2):", 2);
         switch (opcion) {
             case 1:
