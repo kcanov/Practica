@@ -1,3 +1,5 @@
+package practica;
+
 import java.util.Scanner;
 
 public class TabletGrafica {
@@ -15,14 +17,6 @@ public class TabletGrafica {
         this.scanner = scanner;
     }
 
-    public void registrarTabletaGrafica() {
-        this.marca = validaciones.validarMarca("\nIngrese la marca de la tableta gráfica:");
-        this.tamaño = validaciones.validarFloat("\nIngrese el tamaño de la tableta gráfica en pulgadas:");
-        this.precio = validaciones.validarFloat("\nIngrese el precio de la tableta gráfica:");
-        this.almacenamiento = validaciones.validarAlmacenamiento();
-        this.peso = validaciones.validarFloat("\nIngrese el peso de la tableta gráfica en kg:");
-    }
-
 
     @Override
     public String toString() {
@@ -35,5 +29,4 @@ public class TabletGrafica {
                 '}';
     }
 }
-
 
