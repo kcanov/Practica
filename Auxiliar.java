@@ -12,11 +12,11 @@ public class Auxiliar {
         boolean salir = false;
 
         while (!salir) {
-            System.out.println("Menú principal:");
-            System.out.println("1. ESTUDIANTES DE INGENIERIA.");
-            System.out.println("2. ESTUDIANTES DE DISEÑO.");
-            System.out.println("3. IMPRIMIR INVENTARIO TOTAL.");
-            System.out.println("4. SALIR DEL PROGRAMA.");
+            System.out.println("Menú principal:"
+                +"\n1. ESTUDIANTES DE INGENIERIA."
+                +"\n2. ESTUDIANTES DE DISEÑO."
+                +"\n3. IMPRIMIR INVENTARIO TOTAL."
+                +"\n4. SALIR DEL PROGRAMA.");
             int opcion = validaciones.validarEntero("Seleccione una opción:", 4);
 
             switch (opcion) {
@@ -43,12 +43,12 @@ public class Auxiliar {
         boolean volver = false;
 
         while (!volver) {
-            System.out.println("Menú estudiantes de Ingeniería:");
-            System.out.println("1.1 Registrar préstamo de equipo.");
-            System.out.println("1.2 Modificar préstamo de equipo.");
-            System.out.println("1.3 Devolución de equipo.");
-            System.out.println("1.4 Buscar equipo.");
-            System.out.println("1.5 Volver al menú principal.");
+            System.out.println("Menú estudiantes de Ingeniería:"
+                +"\n1.1 Registrar préstamo de equipo."
+                +"\n1.2 Modificar préstamo de equipo."
+                +"\n1.3 Devolución de equipo."
+                +"\n1.4 Buscar equipo."
+                +"\n1.5 Volver al menú principal.");
 
             int opcion = validaciones.validarEntero("Seleccione una opción:", 5);
 
@@ -79,12 +79,12 @@ public class Auxiliar {
         boolean volver = false;
 
         while (!volver) {
-            System.out.println("Menú estudiantes de Diseño:");
-            System.out.println("2.1 Registrar préstamo de equipo.");
-            System.out.println("2.2 Modificar préstamo de equipo.");
-            System.out.println("2.3 Devolución de equipo.");
-            System.out.println("2.4 Buscar equipo.");
-            System.out.println("2.5 Volver al menú principal.");
+            System.out.println("Menú estudiantes de Diseño:"
+                    +"\n2.1 Registrar préstamo de equipo."
+                    +"\n2.2 Modificar préstamo de equipo."
+                    +"\n2.3 Devolución de equipo."
+                    +"\n2.4 Buscar equipo."
+                    +"\n2.5 Volver al menú principal.");
 
             int opcion = validaciones.validarEntero("Seleccione una opción:", 5);
 
@@ -200,10 +200,10 @@ public class Auxiliar {
     }
 
     public String elegirSistemaOperativo() {
-        System.out.println("Seleccione el sistema operativo:");
-        System.out.println("1. Windows 7");
-        System.out.println("2. Windows 10");
-        System.out.println("3. Windows 11");
+        System.out.println("Seleccione el sistema operativo:"
+                +"\n1. Windows 7"
+                +"\n2. Windows 10"
+                +"n3. Windows 11");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
         switch (opcion) {
             case 1:
@@ -219,9 +219,9 @@ public class Auxiliar {
     }
 
     public String elegirProcesador() {
-        System.out.println("Seleccione el procesador:");
-        System.out.println("1. AMD Ryzen");
-        System.out.println("2. Intel® Core™ i5");
+        System.out.println("Seleccione el procesador:"
+            +"1. AMD Ryzen"
+            +"2. Intel® Core™ i5");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-2):", 2);
         switch (opcion) {
             case 1:
@@ -247,10 +247,10 @@ public class Auxiliar {
     }
 
     public String elegirAlmacenamiento() {
-        System.out.println("Seleccione el almacenamiento:");
-        System.out.println("1. 256 GB");
-        System.out.println("2. 512 GB");
-        System.out.println("3. 1 TB");
+        System.out.println("Seleccione el almacenamiento:"
+            +"\n1. 256 GB"
+            +"\n2. 512 GB"
+            +"\n3. 1 TB");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
         switch (opcion) {
             case 1:
