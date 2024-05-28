@@ -1,3 +1,5 @@
+package practica;
+
 public class Estudiante {
 
     private String cedula;
@@ -6,7 +8,6 @@ public class Estudiante {
     private String telefono;
     private String serial;
 
-    // Constructor, get y set
     public Estudiante(String cedula, String nombre, String apellido, String telefono, String serial) {
         this.cedula = cedula;
         this.nombre = nombre;
