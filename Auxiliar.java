@@ -1,8 +1,13 @@
+package practica;
+
+import java.util.Scanner;
+
 public class Auxiliar {
-    
+
     private final GestionPrestamos gestionPrestamos = new GestionPrestamos();
     private final Validaciones validaciones = new Validaciones();
-    
+    private final Scanner scanner = new Scanner(System.in);
+
     public void start() {
         boolean salir = false;
 
@@ -107,17 +112,23 @@ public class Auxiliar {
     }
 
     public void registrarPrestamoIngenieria() {
-        String cedula = validaciones.validarCedula("\nIngrese la cédula del estudiante (8-10 números):");
-        String nombre = validaciones.validarTexto("\nIngrese el nombre del estudiante (3-30 letras):", 3, 30);
-        String apellido = validaciones.validarTexto("\nIngrese el apellido del estudiante (3-30 letras):", 3, 30);
-        String telefono = validaciones.validarTelefono("\nIngrese el teléfono del estudiante (7-10 números):");
-        int semestre = validaciones.validarEntero("\nIngrese el número de semestre del estudiante (1-30):", 30);
-        float promedio = validaciones.validarFloat("\nIngrese el promedio acumulado del estudiante (0.0 hasta 5.0):");
-        String serial = validaciones.validarTexto("\nIngrese el serial del equipo:", 1, 20);
+    String cedula = validaciones.validarCedula("\nIngrese la cédula del estudiante (8-10 números):");
+    String nombre = validaciones.validarTexto("\nIngrese el nombre del estudiante (3-30 letras):", 3, 30);
+    String apellido = validaciones.validarTexto("\nIngrese el apellido del estudiante (3-30 letras):", 3, 30);
+    String telefono = validaciones.validarTelefono("\nIngrese el teléfono del estudiante (7-10 números):");
+    int semestre = validaciones.validarEntero("\nIngrese el número de semestre del estudiante (1-30):", 30);
+    float promedio = validaciones.validarFloat("\nIngrese el promedio acumulado del estudiante (0.0 hasta 5.0):");
+    String serial = validaciones.validarTexto("\nIngrese el serial del equipo:", 1, 20);
+    String sistemaOperativo = elegirSistemaOperativo();
+    String procesador = elegirProcesador();
+    String marca = validaciones.validarTexto("\nIngrese la marca del equipo (2-30 letras):", 2, 30);
+    float tamaño = validaciones.validarFloatT("\nIngrese el tamaño del equipo en pulgadas (0.0 hasta 20.0):");
+    float precio = validaciones.validarFloatP("\nIngrese el precio del equipo:");
 
-        EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, serial, semestre, promedio);
-        gestionPrestamos.registrarPrestamo(estudiante);
-    }
+    EstudianteIngenieria estudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, serial, semestre, promedio, sistemaOperativo, procesador, marca, tamaño, precio);
+    gestionPrestamos.registrarPrestamo(estudiante);
+}
+
 
     public void registrarPrestamoDiseno() {
         String cedula = validaciones.validarCedula("\nIngrese la cédula del estudiante (8-10 números):");
@@ -127,12 +138,13 @@ public class Auxiliar {
         String modalidad = validaciones.validarModalidad();
         int asignaturas = validaciones.validarEntero("\nIngrese la cantidad de asignaturas que está viendo el estudiante (1-12):", 12);
         String serial = validaciones.validarTexto("\nIngrese el serial del equipo:", 1, 20);
-        String marca = validaciones.validarMarca("Ingrese la marca:");
-        String almacenamiento = validaciones.validarAlmacenamiento();
-        
-        
+        String marca = validaciones.validarTexto("\nIngrese la marca del equipo (2-30 letras):", 2, 30);
+        String almacenamiento = elegirAlmacenamiento();
+        float tamaño = validaciones.validarFloatT("\nIngrese el tamaño del equipo en pulgadas (0.0 hasta 20.0):");
+        float peso = validaciones.validarFloat("\nIngrese el peso del equipo en kg (0.0 hasta 5.0):");
+        float precio = validaciones.validarFloatP("\nIngrese el precio del equipo:");
 
-        EstudianteDiseño estudiante = new EstudianteDiseño(cedula, nombre, apellido, telefono, serial, modalidad, asignaturas);
+        EstudianteDiseño estudiante = new EstudianteDiseño(cedula, nombre, apellido, telefono, serial, modalidad, asignaturas, marca, almacenamiento, tamaño, peso, precio);
         gestionPrestamos.registrarPrestamo(estudiante);
     }
 
@@ -148,8 +160,13 @@ public class Auxiliar {
             String telefono = validaciones.validarTelefono("Teléfono (7-12 números):");
             int semestre = validaciones.validarEntero("Número de semestre (1-30):", 30);
             float promedio = validaciones.validarFloat("Promedio (0.0 hasta 5.0):");
+            String sistemaOperativo = elegirSistemaOperativo();
+            String procesador = elegirProcesador();
+            String marca = validaciones.validarTexto("Marca (2-30 letras):", 2, 30);
+            float tamaño = validaciones.validarFloatT("Tamaño del equipo en pulgadas (0.0 hasta 20.0):");
+            float precio = validaciones.validarFloatP("Precio del equipo:");
 
-            EstudianteIngenieria nuevoEstudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, serial, semestre, promedio);
+            EstudianteIngenieria nuevoEstudiante = new EstudianteIngenieria(cedula, nombre, apellido, telefono, serial, semestre, promedio, sistemaOperativo, procesador, marca, tamaño, precio);
             gestionPrestamos.modificarPrestamo(serial, nuevoEstudiante);
         } else if (tipoEstudiante.equals("diseno")) {
             System.out.println("Ingrese los nuevos datos del estudiante de diseño:");
@@ -159,8 +176,13 @@ public class Auxiliar {
             String telefono = validaciones.validarTelefono("Teléfono (7-12 números):");
             String modalidad = validaciones.validarModalidad();
             int asignaturas = validaciones.validarEntero("Cantidad de asignaturas (1-12):", 12);
+            String marca = validaciones.validarTexto("Marca (2-30 letras):", 2, 30);
+            String almacenamiento = elegirAlmacenamiento();
+            float tamaño = validaciones.validarFloat("Tamaño del equipo en pulgadas (0.0 hasta 20.0):");
+            float peso = validaciones.validarFloat("Peso del equipo en kg (0.0 hasta 5.0):");
+            float precio = validaciones.validarFloat("Precio del equipo:");
 
-            EstudianteDiseño nuevoEstudiante = new EstudianteDiseño(cedula, nombre, apellido, telefono, serial, modalidad, asignaturas);
+            EstudianteDiseño nuevoEstudiante = new EstudianteDiseño(cedula, nombre, apellido, telefono, serial, modalidad, asignaturas, marca, almacenamiento, tamaño, peso, precio);
             gestionPrestamos.modificarPrestamo(serial, nuevoEstudiante);
         }
     }
@@ -176,6 +198,70 @@ public class Auxiliar {
         String serial = validaciones.validarTexto("Serial del equipo:", 1, 20);
         gestionPrestamos.buscarEquipo(serial);
     }
+
+    public String elegirSistemaOperativo() {
+        System.out.println("Seleccione el sistema operativo:");
+        System.out.println("1. Windows 7");
+        System.out.println("2. Windows 10");
+        System.out.println("3. Windows 11");
+        int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
+        switch (opcion) {
+            case 1:
+                return "Windows 7";
+            case 2:
+                return "Windows 10";
+            case 3:
+                return "Windows 11";
+            default:
+                System.out.println("Opción inválida. Intente nuevamente.");
+                return elegirSistemaOperativo();
+        }
+    }
+
+    public String elegirProcesador() {
+        System.out.println("Seleccione el procesador:");
+        System.out.println("1. AMD Ryzen");
+        System.out.println("2. Intel® Core™ i5");
+        int opcion = validaciones.validarEntero("Seleccione una opción (1-2):", 2);
+        switch (opcion) {
+            case 1:
+                return "AMD Ryzen";
+            case 2:
+                return "Intel® Core™ i5";
+            default:
+                System.out.println("Opción inválida. Intente nuevamente.");
+                return elegirProcesador();
+        }
+    }
+    
+    public String validarMarca(String mensaje) {
+        System.out.println(mensaje);
+        while (true) {
+            String marca = scanner.nextLine().trim();
+            if (marca.matches("[a-zA-Z ]+")) {
+                return marca;
+            } else {
+                System.out.println("Marca inválida. Intente nuevamente.");
+            }
+        }
+    }
+
+    public String elegirAlmacenamiento() {
+        System.out.println("Seleccione el almacenamiento:");
+        System.out.println("1. 256 GB");
+        System.out.println("2. 512 GB");
+        System.out.println("3. 1 TB");
+        int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
+        switch (opcion) {
+            case 1:
+                return "256 GB";
+            case 2:
+                return "512 GB";
+            case 3:
+                return "1 TB";
+            default:
+                System.out.println("Opción inválida. Intente nuevamente.");
+                return elegirAlmacenamiento();
+        }
+    }
 }
-
-
