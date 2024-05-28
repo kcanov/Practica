@@ -12,11 +12,11 @@ public class Auxiliar {
         boolean salir = false;
 
         while (!salir) {
-            System.out.println("Menú principal:"
-                +"\n1. ESTUDIANTES DE INGENIERIA."
-                +"\n2. ESTUDIANTES DE DISEÑO."
-                +"\n3. IMPRIMIR INVENTARIO TOTAL."
-                +"\n4. SALIR DEL PROGRAMA.");
+            System.out.println("\nMenú principal:"
+                +"\n 1. ESTUDIANTES DE INGENIERIA."
+                +"\n 2. ESTUDIANTES DE DISEÑO."
+                +"\n 3. IMPRIMIR INVENTARIO TOTAL."
+                +"\n 4. SALIR DEL PROGRAMA.");
             int opcion = validaciones.validarEntero("Seleccione una opción:", 4);
 
             switch (opcion) {
@@ -30,7 +30,7 @@ public class Auxiliar {
                     gestionPrestamos.imprimirInventario();
                     break;
                 case 4:
-                    System.out.println("Profe, el código está melo. Ponenos buena nota."
+                    System.out.println("\nProfe, el código está melo. Ponenos buena nota."
                             + "\nHasta Luego.");
                     salir = true;
                     break;
@@ -45,12 +45,12 @@ public class Auxiliar {
         boolean volver = false;
 
         while (!volver) {
-            System.out.println("Menú estudiantes de Ingeniería:"
-                +"\n1.1 Registrar préstamo de equipo."
-                +"\n1.2 Modificar préstamo de equipo."
-                +"\n1.3 Devolución de equipo."
-                +"\n1.4 Buscar equipo."
-                +"\n1.5 Volver al menú principal.");
+            System.out.println("\nMenú estudiantes de Ingeniería:"
+                +"\n 1.1 Registrar préstamo de equipo."
+                +"\n 1.2 Modificar préstamo de equipo."
+                +"\n 1.3 Devolución de equipo."
+                +"\n 1.4 Buscar equipo."
+                +"\n 1.5 Volver al menú principal.");
 
             int opcion = validaciones.validarEntero("Seleccione una opción:", 5);
 
@@ -81,12 +81,12 @@ public class Auxiliar {
         boolean volver = false;
 
         while (!volver) {
-            System.out.println("Menú estudiantes de Diseño:"
-                    +"\n2.1 Registrar préstamo de equipo."
-                    +"\n2.2 Modificar préstamo de equipo."
-                    +"\n2.3 Devolución de equipo."
-                    +"\n2.4 Buscar equipo."
-                    +"\n2.5 Volver al menú principal.");
+            System.out.println("\nMenú estudiantes de Diseño:"
+                    +"\n 2.1 Registrar préstamo de equipo."
+                    +"\n 2.2 Modificar préstamo de equipo."
+                    +"\n 2.3 Devolución de equipo."
+                    +"\n 2.4 Buscar equipo."
+                    +"\n 2.5 Volver al menú principal.");
 
             int opcion = validaciones.validarEntero("Seleccione una opción:", 5);
 
@@ -202,10 +202,10 @@ public class Auxiliar {
     }
 
     public String elegirSistemaOperativo() {
-        System.out.println("Seleccione el sistema operativo:"
-                +"\n1. Windows 7"
-                +"\n2. Windows 10"
-                +"\n3. Windows 11");
+        System.out.println("\nSeleccione el sistema operativo:"
+                +"\n 1. Windows 7"
+                +"\n 2. Windows 10"
+                +"\n 3. Windows 11");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
         switch (opcion) {
             case 1:
@@ -249,10 +249,10 @@ public class Auxiliar {
     }
 
     public String elegirAlmacenamiento() {
-        System.out.println("Seleccione el almacenamiento:"
-            +"\n1. 256 GB"
-            +"\n2. 512 GB"
-            +"\n3. 1 TB");
+        System.out.println("\nSeleccione el almacenamiento:"
+            +"\n 1. 256 GB"
+            +"\n 2. 512 GB"
+            +"\n 3. 1 TB");
         int opcion = validaciones.validarEntero("Seleccione una opción (1-3):", 3);
         switch (opcion) {
             case 1:
