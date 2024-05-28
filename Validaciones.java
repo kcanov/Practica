@@ -115,8 +115,8 @@ public class Validaciones {
         String modalidad = "";
         do {
             System.out.println("Seleccione la modalidad de estudio:"
-                    +"\n1. Virtual"
-                    +"\n2. Presencial\n");
+                    +"\n 1. Virtual"
+                    +"\n 2. Presencial\n");
             int opcion = validarEntero("Seleccione una opción (1 o 2):", 2);
             switch (opcion) {
                 case 1:
