@@ -71,10 +71,10 @@ public class CompuPortatil {
 
     public String elegirSistemaOperativo() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Seleccione el sistema operativo:");
-        System.out.println("1. Windows 7");
-        System.out.println("2. Windows 10");
-        System.out.println("3. Windows 11");
+        System.out.println("Seleccione el sistema operativo:"
+            +"\n1. Windows 7"
+            +"\n2. Windows 10"
+            +"\n3. Windows 11");
         int opcion = scanner.nextInt();
         switch (opcion) {
             case 1:
@@ -91,9 +91,9 @@ public class CompuPortatil {
 
     public String elegirProcesador() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Seleccione el procesador:");
-        System.out.println("1. AMD Ryzen");
-        System.out.println("2. Intel® Core™ i5");
+        System.out.println("Seleccione el procesador:"
+            +"\n1. AMD Ryzen"
+            +"\n2. Intel® Core™ i5");
         int opcion = scanner.nextInt();
         switch (opcion) {
             case 1:
