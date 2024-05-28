@@ -1,3 +1,5 @@
+package practica;
+
 import java.util.Scanner;
 
 public class Validaciones {
@@ -36,6 +38,42 @@ public class Validaciones {
         }
     }
 }
+    
+    public float validarFloatT(String mensaje) {
+    System.out.println(mensaje);
+    while (true) {
+        try {
+            String input = scanner.nextLine();
+            float numero = Float.parseFloat(input);
+            if (numero >= 0.0 && numero <= 20.0) {
+                return numero;
+            } else {
+                System.out.println("El número debe estar entre 0.0 y 20.0, Intente nuevamente.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Entrada inválida. Intente nuevamente.");
+        }
+    }
+}
+    
+    public float validarFloatP(String mensaje) {
+    System.out.println(mensaje);
+    while (true) {
+        try {
+            String input = scanner.nextLine();
+            float numero = Float.parseFloat(input);
+            if (numero >= 0.0 && numero <= 10000000000.0) {
+                return numero;
+            } else {
+                System.out.println("El número debe estar entre 0.0 y 10000000000.0, Intente nuevamente.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Entrada inválida. Intente nuevamente.");
+        }
+    }
+}
+    
+    
 
     public String validarTexto(String mensaje, int min, int max) {
         String input;
@@ -95,35 +133,4 @@ public class Validaciones {
         return modalidad;
     }
     
-    public String validarMarca(String mensaje) {
-        System.out.println(mensaje);
-        while (true) {
-            String marca = scanner.nextLine().trim();
-            if (marca.matches("[a-zA-Z ]+")) {
-                return marca;
-            } else {
-                System.out.println("Marca inválida. Intente nuevamente.");
-            }
-        }
-    }
-
-    public String validarAlmacenamiento() {
-        System.out.println("\nSeleccione el almacenamiento de la tableta gráfica:"
-        +"\n1. 256 GB"
-        +"\n2. 512 GB"
-        +"\n3. 1 TB");
-        
-
-        int opcion = validarEntero("Opción:", 3);
-        switch (opcion) {
-            case 1:
-                return "256 GB";
-            case 2:
-                return "512 GB";
-            case 3:
-                return "1 TB";
-            default:
-                return "256 GB";
-        }
-    }
 }
